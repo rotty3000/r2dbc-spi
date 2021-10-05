@@ -83,6 +83,27 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-resolver-maven-plugin</artifactId>
+                <version>${bnd.version}</version>
+                <configuration>
+                    <bndruns>
+                        <bndrun>verifyOSGi.bndrun</bndrun>
+                    </bndruns>
+                    <failOnChanges>false</failOnChanges>
+                    <reportOptional>false</reportOptional>
+                    <writeOnChanges>false</writeOnChanges>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>resolve</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
